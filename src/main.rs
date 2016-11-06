@@ -1,6 +1,5 @@
 extern crate regex;
 
-use std::slice;
 use std::str;
 use regex::Regex;
 
@@ -25,6 +24,9 @@ fn tokenize(code: String) {
     let low_re = Regex::new(r"\A([a-z]\w*)").unwrap();
     let up_re = Regex::new(r"\A([A-Z]\w*)").unwrap();
     let num_re = Regex::new(r"\A(\d+)").unwrap();
+    // let string_re = Regex::new(r"^\*\w*").unwrap();
+    let indent_re = Regex::new(r"\A\n( *)").unwrap();
+
 
     let mut tokens: Vec<&str> = vec![];
     let current_indent = 0;
@@ -40,14 +42,24 @@ fn tokenize(code: String) {
                     tokens.push(caps.at(1).unwrap())
                 }
                 i +=caps.at(1).unwrap().len(); 
-            }    
-
+            } 
+            
             for caps in up_re.captures_iter(&chunk) {
                 tokens.push(caps.at(1).unwrap());
                 i +=caps.at(1).unwrap().len(); 
             }
 
             for caps in num_re.captures_iter(&chunk) {
+                tokens.push(caps.at(1).unwrap());
+                i +=caps.at(1).unwrap().len(); 
+            }
+
+            // for caps in string_re.captures_iter(&chunk) {
+            //     tokens.push(caps.at(1).unwrap());
+            //     i +=caps.at(1).unwrap().len() + 2; 
+            // }
+
+            for caps in indent_re.captures_iter(&chunk) {
                 tokens.push(caps.at(1).unwrap());
                 i +=caps.at(1).unwrap().len(); 
             }
