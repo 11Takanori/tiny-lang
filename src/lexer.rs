@@ -1,10 +1,11 @@
 use token;
-use token::Tokne;
+use token::Token;
 use token::TokenType;
 
 pub struct Lexer<'a> {
     input: &'a str,
     position: usize,
+    read_position: usize,
     ch: Option<char>,
 }
 
@@ -20,7 +21,7 @@ impl<'a> Lexer<'a> {
         return l;
     }
 
-    pub fn next_token(&mut: self) -> Token {
+    pub fn next_token(&mut self) -> Token {
         let mut tok = Token::default();
 
         self.skip_whitespace();
@@ -72,7 +73,7 @@ impl<'a> Lexer<'a> {
         return tok;
     }
 
-    fn skip_witespace(&mut self) {
+    fn skip_whitespace(&mut self) {
         while match self.ch {
             Some(ch) => ch.is_whitespace(),
             _ => false,

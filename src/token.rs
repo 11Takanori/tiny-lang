@@ -1,3 +1,4 @@
+#[derive(Debug, PartialEq)]
 pub enum TokenType {
     Illegal,
     EndOfFile,
@@ -36,8 +37,8 @@ pub enum TokenType {
     Return,
 }
 
-pub #[derive(Debug)]
-struct Token {
+#[derive(Debug)]
+pub struct Token {
     pub token_type: TokenType,
     pub literal: String,
 }
