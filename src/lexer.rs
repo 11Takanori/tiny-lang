@@ -38,6 +38,19 @@ impl<'a> Lexer<'a> {
                     tok = new_token(TokenType::Assign, ch);
                 }
             }
+            Some(ch @ '!') => {
+                if self.peek_char_eq('=') {
+                    self.read_char();
+                    tok = Token {
+                        token_type: TokenType::NotEqual,
+                        literal: String::from("!="),
+                    };
+                } else {
+                    tok = new_token(TokenType::Bang, ch);
+                }
+            }
+            Some(ch @ '+') => tok = new_token(TokenType::Plus, ch),
+            Some(ch @ '-') => tok = new_token(TokenType::Minus, ch),
             Some(ch @ '/') => tok = new_token(TokenType::Slash, ch),
             Some(ch @ '*') => tok = new_token(TokenType::Asterisk, ch),
             Some(ch @ '<') => tok = new_token(TokenType::LowerThan, ch),
