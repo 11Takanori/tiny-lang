@@ -99,9 +99,7 @@ impl<'a> Lexer<'a> {
         if self.read_position >= self.input.len() {
             self.ch = None;
         } else {
-            self.ch = self.input
-                .chars()
-                .nth(self.read_position);
+            self.ch = self.input[self.read_position..].chars().next();
         }
 
         self.position = self.read_position;
