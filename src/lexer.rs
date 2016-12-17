@@ -1,6 +1,5 @@
 use token;
-use token::Token;
-use token::TokenType;
+use token::{Token,TokenType};
 
 pub struct Lexer<'a> {
     input: &'a str,
