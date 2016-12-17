@@ -1,6 +1,3 @@
-// pub mod lexer;
-// pub mod token;
-
 use std::io::{self, BufRead, Write};
 use token::TokenType;
 use lexer::Lexer;
