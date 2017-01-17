@@ -12,8 +12,8 @@ const (
 	ASSINGN  = "="
 	PLUS     = "+"
 	MINUS    = "-"
-	GANG     = "!"
-	ASTERISL = "*"
+	BANG     = "!"
+	ASTERISK = "*"
 
 	LT = "<"
 	GT = ">"
