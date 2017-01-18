@@ -1,7 +1,7 @@
 package lexer
 
 import (
-	"go/token"
+	"hoge/token"
 	"testing"
 )
 
