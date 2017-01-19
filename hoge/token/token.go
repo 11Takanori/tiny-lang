@@ -9,11 +9,12 @@ const (
 	IDENT = "IDENT"
 	INT   = "INT"
 
-	ASSINGN  = "="
+	ASSIGN   = "="
 	PLUS     = "+"
 	MINUS    = "-"
 	BANG     = "!"
 	ASTERISK = "*"
+	SLASH    = "/"
 
 	LT = "<"
 	GT = ">"
