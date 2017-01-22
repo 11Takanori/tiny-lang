@@ -81,7 +81,7 @@ func (p *Parser) parseLetStatement() *ast.LetStatement {
 
 	p.nextToken()
 
-	if p.peekTokenIs(token.SEMICOLON) {
+	if !p.peekTokenIs(token.SEMICOLON) {
 		p.nextToken()
 	}
 	return stmt
