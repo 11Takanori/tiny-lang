@@ -220,7 +220,7 @@ func testIntegerLiteral(t *testing.T, il ast.Expression, value int64) bool {
 		return false
 	}
 
-	return false
+	return true
 }
 
 func checkParserErrors(t *testing.T, p *Parser) {
