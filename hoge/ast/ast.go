@@ -94,6 +94,23 @@ func (es *Expressionstatement) String() string {
 	return ""
 }
 
+type BlockStatement struct {
+	Token     token.Token
+	Statement []Statement
+}
+
+func (bs *BlockStatement) statementNode()       {}
+func (bs *BlockStatement) TokenLiteral() string { return bs.Token.Literal }
+func (bs *BlockStatement) String() string {
+	var out bytes.Buffer
+
+	for _, s := range bs.Statement {
+		out.WriteString(s.String())
+	}
+
+	return out.String()
+}
+
 // Expressions
 type Identifier struct {
 	Token token.Token
