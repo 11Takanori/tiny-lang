@@ -406,8 +406,7 @@ func TestIfExpression(t *testing.T) {
 		t.Errorf("consequence is not 1 statements. got=%d\n",
 			len(exp.Consequence.Statements))
 	}
-
-	consequence, ok := exp.Consequence.Statements[0].(*ast.ExpressionStatement)
+	consequence, ok := exp.Consequence.Statements[0].(*ast.Expressionstatement)
 	if !ok {
 		t.Fatalf("Statements[0] is not ast.ExpressionStatement. got=%T",
 			exp.Consequence.Statements[0])
