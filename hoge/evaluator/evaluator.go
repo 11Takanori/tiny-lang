@@ -29,14 +29,14 @@ func Eval(node ast.Node, env *object.Environment) object.Object {
 	case *ast.ReturnStatement:
 		val := Eval(node.ReturnValue, env)
 		if isError(val) {
-			return nil
+			return val
 		}
 		return &object.ReturnValue{Value: val}
 
 	case *ast.LetStatement:
 		val := Eval(node.Value, env)
 		if isError(val) {
-			return nil
+			return val
 		}
 		env.Set(node.Name.Value, val)
 
