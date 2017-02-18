@@ -459,7 +459,7 @@ func TestFunctionLiteralParsing(t *testing.T) {
 }
 
 func TestStringLiteralExpression(t *testing.T) {
-	input := `hello world;`
+	input := `"hello world";`
 
 	l := lexer.New(input)
 	p := New(l)
