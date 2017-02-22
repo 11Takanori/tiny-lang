@@ -299,7 +299,7 @@ type IndexExpression struct {
 }
 
 func (ie *IndexExpression) expressionNode()      {}
-func (ie *IndexExpression) TokneLiteral() string { return ie.Token.Literal }
+func (ie *IndexExpression) TokenLiteral() string { return ie.Token.Literal }
 func (ie *IndexExpression) String() string {
 	var out bytes.Buffer
 
