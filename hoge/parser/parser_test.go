@@ -518,7 +518,6 @@ func TestParsingIndexExpressions(t *testing.T) {
 
 	stmt, ok := program.Statements[0].(*ast.Expressionstatement)
 	indexExp, ok := stmt.Expression.(*ast.IndexExpression)
-
 	if !ok {
 		t.Fatalf("exp not *ast.IndexExpression. got=%T", stmt.Expression)
 	}
