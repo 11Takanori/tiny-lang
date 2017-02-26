@@ -623,6 +623,25 @@ func TestCallExpressionParsing(t *testing.T) {
 	testInfixExpression(t, exp.Arguments[2], 4, "+", 5)
 }
 
+func TestParsingEmptyHashLiteral(t *testing.T) {
+	input := "{}"
+
+	l := lexer.New(input)
+	p := New(l)
+	program := p.ParseProgram()
+	checkParserErrors(t, p)
+
+	stmt := program.Statements[0].(*ast.Expressionstatement)
+	hash, ok := stmt.Expression.(*ast.HashLiteral)
+	if !ok {
+		t.Fatalf("exp is not ast.HashLiteral. got=%T", stmt.Expression)
+	}
+
+	if len(hash.Pairs) != 0 {
+		t.Errorf("hash.Pairs has wrong length. got=%d", len(hash.Pairs))
+	}
+}
+
 func TestParsingHashLiteralsStringKeys(t *testing.T) {
 	input := `{"one": 1, "two": 2, "three": 3}`
 
