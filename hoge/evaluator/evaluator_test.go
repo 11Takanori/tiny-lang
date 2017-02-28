@@ -473,7 +473,6 @@ func TestHashLiterals(t *testing.T) {
 
 		testIntegerObject(t, pair.Value, expectedValue)
 	}
-
 }
 
 func testBooleanObject(t *testing.T, obj object.Object, expected bool) bool {
