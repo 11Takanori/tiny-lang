@@ -217,6 +217,10 @@ func TestErrorHandling(t *testing.T) {
 			"foobar",
 			"identifier not found: foobar",
 		},
+		{
+			`{"name": "Monkey"}[fn(x) { x }];`,
+			"unusable as hash key: FUNCTION",
+		},
 	}
 
 	for _, tt := range tests {
