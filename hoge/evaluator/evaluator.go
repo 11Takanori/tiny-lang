@@ -435,7 +435,7 @@ func evalHashLiteral(
 func evalHashIndexExpression(hash, index object.Object) object.Object {
 	hashObject := hash.(*object.Hash)
 
-	key, ok := index.(*object.Hash)
+	key, ok := index.(object.Hashable)
 	if !ok {
 		return newError("unusable as hash key: %s", index.Type())
 	}
