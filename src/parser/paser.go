@@ -5,9 +5,9 @@ import (
 
 	"strconv"
 
-	"./../ast"
-	"./../lexer"
-	"./../token"
+	"../ast"
+	"../lexer"
+	"../token"
 )
 
 const (

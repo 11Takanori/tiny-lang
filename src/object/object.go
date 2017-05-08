@@ -8,7 +8,7 @@ import (
 
 	"hash/fnv"
 
-	"./../ast"
+	"../ast"
 )
 
 type BuiltinFunction func(args ...Object) Object

@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"io"
 
-	"./../evaluator"
-	"./../lexer"
-	"./../object"
-	"./../parser"
+	"../evaluator"
+	"../lexer"
+	"../object"
+	"../parser"
 )
 
 const PROMPT = ">> "

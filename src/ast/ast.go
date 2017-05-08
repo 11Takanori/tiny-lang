@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"strings"
 
-	"./../token"
+	"../token"
 )
 
 type Node interface {

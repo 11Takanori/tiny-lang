@@ -3,8 +3,8 @@ package evaluator
 import (
 	"fmt"
 
-	"./../ast"
-	"./../object"
+	"../ast"
+	"../object"
 )
 
 var (

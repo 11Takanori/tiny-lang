@@ -5,8 +5,8 @@ import (
 
 	"fmt"
 
-	"./../ast"
-	"./../lexer"
+	"../ast"
+	"../lexer"
 )
 
 func TestLetStatements(t *testing.T) {
